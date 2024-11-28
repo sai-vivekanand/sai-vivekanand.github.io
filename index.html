@@ -1,1 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Vivekanand - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
+        body {
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .header-info h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info {
+            color: #666;
+        }
+
+        .contact-info a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .education-item, .experience-item, .project-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .date {
+            color: #666;
+            font-style: italic;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .skill-category {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 0.3rem 0.8rem;
+            margin: 0.3rem;
+            border-radius: 15px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="/api/placeholder/200/200" alt="Sai Vivekanand" class="profile-img">
+        <div class="header-info">
+            <h1>Sai Vivekanand</h1>
+            <div class="contact-info">
+                <p>857-465-9966 | vangala.sa@northeastern.edu</p>
+                <p>Boston, MA | <a href="https://www.linkedin.com/in/sai-vivekanand-reddy-vangala/">LinkedIn</a> | <a href="https://github.com/sai-vivekanand">GitHub</a></p>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <h2>Education</h2>
+        <div class="education-item">
+            <h3>Northeastern University, Boston, USA</h3>
+            <p class="date">September 2023 - Present</p>
+            <p>Master of Science, Computer Software Engineering</p>
+            <p>Relevant Courses: Data Science Engineering, Networks & Cloud Computing, Intelligence Analytics</p>
+        </div>
+        <div class="education-item">
+            <h3>Birla Institute of Technology and Science, Pilani, India</h3>
+            <p class="date">August 2016 - June 2020</p>
+            <p>Bachelor of Engineering</p>
+            <p>Relevant Courses: OOPs, Algorithms, Operating Systems, Neural Networks, Distributed Systems</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Experience</h2>
+        <div class="experience-item">
+            <h3>Software Engineer 1 - Blue Yonder</h3>
+            <p class="date">January 2022 - May 2022 | Hyderabad, India</p>
+            <ul>
+                <li>Engineered cloud-hosted microservices, enhancing system performance with 60% faster deployment</li>
+                <li>Led feature enhancement initiative resulting in 12% performance increase</li>
+                <li>Implemented logging framework improving diagnostics by 20%</li>
+            </ul>
+        </div>
+        <!-- Add more experience items -->
+    </section>
+
+    <section>
+        <h2>Technical Skills</h2>
+        <div class="skills">
+            <div class="skill-category">
+                <h3>Programming Languages</h3>
+                <ul class="skill-list">
+                    <li>Java</li>
+                    <li>Python</li>
+                    <li>C</li>
+                    <li>Go</li>
+                    <li>SQL</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Web Development</h3>
+                <ul class="skill-list">
+                    <li>React</li>
+                    <li>TypeScript</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+            </div>
+            <!-- Add more skill categories -->
+        </div>
+    </section>
+
+    <section>
+        <h2>Projects</h2>
+        <div class="project-item">
+            <h3>RAG Application (with AI Agents)</h3>
+            <p class="date">September 2024 - October 2024</p>
+            <ul>
+                <li>Architected multi-agent research system using LangGraph, orchestrating RAG, Web Search, and Academic Paper retrieval</li>
+                <li>Developed automated document processing pipeline using Airflow, Docling, and Pinecone</li>
+            </ul>
+        </div>
+        <!-- Add more project items -->
+    </section>
+</body>
+</html>
