@@ -21,11 +21,8 @@
         }
 
         header {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
+            text-align: center;
             margin-bottom: 2rem;
-            flex-wrap: wrap;
         }
 
         .profile-img {
@@ -33,15 +30,12 @@
             height: 200px;
             border-radius: 50%;
             object-fit: cover;
-        }
-
-        .header-info h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
 
         .contact-info {
             color: #666;
+            margin-bottom: 1rem;
         }
 
         .contact-info a {
@@ -69,50 +63,47 @@
         }
 
         .skills {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1rem;
+            margin-bottom: 1rem;
         }
 
-        .skill-category {
-            flex: 1;
-            min-width: 250px;
+        .skill-category h3 {
+            margin-bottom: 0.5rem;
         }
 
         .skill-list {
             list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }
 
         .skill-list li {
-            display: inline-block;
             background: #f0f0f0;
             padding: 0.3rem 0.8rem;
-            margin: 0.3rem;
             border-radius: 15px;
+            font-size: 0.9rem;
         }
 
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-            }
+        ul.achievements {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
 
-            .profile-img {
-                width: 150px;
-                height: 150px;
-            }
+        .achievements li {
+            margin-bottom: 0.5rem;
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="/api/placeholder/200/200" alt="Sai Vivekanand" class="profile-img">
-        <div class="header-info">
-            <h1>Sai Vivekanand</h1>
-            <div class="contact-info">
-                <p>857-465-9966 | vangala.sa@northeastern.edu</p>
-                <p>Boston, MA | <a href="https://www.linkedin.com/in/sai-vivekanand-reddy-vangala/">LinkedIn</a> | <a href="https://github.com/sai-vivekanand">GitHub</a></p>
-            </div>
+        <img src="assets/images/your-photo.jpg" alt="Sai Vivekanand" class="profile-img">
+        <h1>SAI VIVEKANAND</h1>
+        <div class="contact-info">
+            <p>857-465-9966 | vangala.sa@northeastern.edu</p>
+            <p>Boston, MA | <a href="https://linkedin.com/in/YourProfile">LinkedIn</a> | <a href="https://github.com/sai-vivekanand">GitHub</a></p>
         </div>
     </header>
 
@@ -130,20 +121,6 @@
             <p>Bachelor of Engineering</p>
             <p>Relevant Courses: OOPs, Algorithms, Operating Systems, Neural Networks, Distributed Systems</p>
         </div>
-    </section>
-
-    <section>
-        <h2>Experience</h2>
-        <div class="experience-item">
-            <h3>Software Engineer 1 - Blue Yonder</h3>
-            <p class="date">January 2022 - May 2022 | Hyderabad, India</p>
-            <ul>
-                <li>Engineered cloud-hosted microservices, enhancing system performance with 60% faster deployment</li>
-                <li>Led feature enhancement initiative resulting in 12% performance increase</li>
-                <li>Implemented logging framework improving diagnostics by 20%</li>
-            </ul>
-        </div>
-        <!-- Add more experience items -->
     </section>
 
     <section>
@@ -169,7 +146,26 @@
                     <li>JavaScript</li>
                 </ul>
             </div>
-            <!-- Add more skill categories -->
+            <div class="skill-category">
+                <h3>Cloud & DevOps</h3>
+                <ul class="skill-list">
+                    <li>AWS (S3, EC2, Lambda)</li>
+                    <li>GCP</li>
+                    <li>Azure</li>
+                    <li>Terraform</li>
+                    <li>Docker</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Frameworks & Tools</h3>
+                <ul class="skill-list">
+                    <li>FastAPI</li>
+                    <li>Streamlit</li>
+                    <li>Airflow</li>
+                    <li>Git</li>
+                    <li>Spring</li>
+                </ul>
+            </div>
         </div>
     </section>
 
@@ -178,12 +174,51 @@
         <div class="project-item">
             <h3>RAG Application (with AI Agents)</h3>
             <p class="date">September 2024 - October 2024</p>
-            <ul>
-                <li>Architected multi-agent research system using LangGraph, orchestrating RAG, Web Search, and Academic Paper retrieval</li>
+            <ul class="achievements">
+                <li>Architected a multi-agent research system using LangGraph, orchestrating RAG, Web Search, and Academic Paper retrieval agents</li>
                 <li>Developed automated document processing pipeline using Airflow, Docling, and Pinecone</li>
+                <li>Built secure research platform using FastAPI and Streamlit with JWT authentication</li>
             </ul>
         </div>
-        <!-- Add more project items -->
+        <div class="project-item">
+            <h3>DevOps Webapp Application</h3>
+            <p class="date">January 2024 - March 2024</p>
+            <ul class="achievements">
+                <li>Created webapp with RESTful API on AWS using Terraform, S3, RDS, EC2 with KMS encryption</li>
+                <li>Implemented custom EC2 AMI with Packer, reducing setup time by 50%</li>
+                <li>Set up GitHub Actions for CI/CD with CloudWatch monitoring</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Experience</h2>
+        <div class="experience-item">
+            <h3>Software Engineer 1 - Blue Yonder</h3>
+            <p class="date">January 2022 - May 2022 | Hyderabad, India</p>
+            <ul class="achievements">
+                <li>Engineered cloud-hosted microservices replacing legacy application, enhancing system performance by 60%</li>
+                <li>Led feature enhancement initiative resulting in 12% performance increase</li>
+                <li>Implemented logging framework improving diagnostics by 20%</li>
+            </ul>
+        </div>
+        <div class="experience-item">
+            <h3>Associate Software Engineer - Blue Yonder</h3>
+            <p class="date">July 2020 - December 2021 | Hyderabad, India</p>
+            <ul class="achievements">
+                <li>Initiated CI/CD project using GitHub, Jenkins, and Helm Charts, reducing deployment times by 40%</li>
+                <li>Improved bug resolution time by 25% through enhanced debugging and communication</li>
+                <li>Experienced full SDLC including design, implementation, testing, and deployment</li>
+            </ul>
+        </div>
+        <div class="experience-item">
+            <h3>Product Development Intern - JDA Software Solutions</h3>
+            <p class="date">June 2019 - December 2019 | Hyderabad, India</p>
+            <ul class="achievements">
+                <li>Designed user interactive screens using HTML5, CSS3, JavaScript</li>
+                <li>Achieved 95% test coverage through comprehensive unit testing</li>
+            </ul>
+        </div>
     </section>
 </body>
 </html>
