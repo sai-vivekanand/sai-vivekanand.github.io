@@ -1,224 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sai Vivekanand - Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sai Vivekanand — Software & AI Engineer</title>
+  <meta name="description" content="Full-stack & AI engineer: cloud infra, DevOps, multi-agent/RAG systems. Blue Yonder alum; MS at Northeastern.">
+  <link rel="icon" href="assets/vivek.png" />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Sai Vivekanand — Software & AI Engineer">
+  <meta property="og:description" content="Full-stack & AI engineer: cloud infra, DevOps, multi-agent/RAG systems. Blue Yonder alum; MS at Northeastern.">
+  <meta property="og:image" content="assets/og.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
 
-        body {
-            line-height: 1.6;
-            color: #333;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+  <style>
+    :root{
+      --bg:#0b0c10; --card:#111217; --muted:#8b8e98; --fg:#e8e8ea; --brand:#5aa9ff; --chip:#1a1c22; --line:#22242c;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+      color:var(--fg); background:linear-gradient(180deg,#0b0c10,#0f1016 40%,#0b0c10);
+      -webkit-font-smoothing:antialiased; max-width: 1100px; margin:0 auto; padding:24px;
+    }
+    a{color:var(--brand); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{display:grid; gap:28px}
+    header{
+      display:grid; gap:18px; padding:24px; border:1px solid var(--line); border-radius:18px; background:var(--card);
+      align-items:center; grid-template-columns: 120px 1fr; 
+    }
+    .pfp{width:110px;height:110px;border-radius:50%;object-fit:cover;border:2px solid #1f2330}
+    .title h1{margin:0;font-size:28px}
+    .subtitle{color:var(--muted); margin-top:6px}
+    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:10px}
+    .btn{
+      display:inline-block; padding:10px 14px; border-radius:12px; border:1px solid var(--line);
+      background:#171923; color:var(--fg); text-decoration:none; font-weight:600;
+    }
+    .btn.primary{background:var(--brand); color:#081a2d; border-color:transparent}
+    .btn:hover{filter:brightness(1.05)}
+    section{padding:20px 24px; border:1px solid var(--line); border-radius:18px; background:var(--card)}
+    h2{margin:0 0 12px 0; font-size:20px}
+    .grid{display:grid; gap:16px}
+    @media(min-width:920px){ .grid.cols-2{grid-template-columns:1fr 1fr} }
+    .item{padding:14px 0; border-top:1px dashed #242633}
+    .item:first-child{border-top:0}
+    .headline{display:flex; gap:8px; justify-content:space-between; align-items:baseline; flex-wrap:wrap}
+    .where{font-weight:700}
+    .when,.loc{color:var(--muted); font-size:14px}
+    ul{margin:8px 0 0 18px}
+    li{margin:6px 0}
+    .chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
+    .chip{padding:6px 10px; border-radius:999px; background:var(--chip); border:1px solid var(--line); color:#cfd2da; font-size:13px}
+    .project-card{border:1px solid var(--line); border-radius:14px; padding:14px; background:#0f1117}
+    footer{color:var(--muted); text-align:center; padding:10px}
+    /* Print résumé-like */
+    @media print{
+      body{background:#fff; color:#000; padding:0; max-width:none}
+      header,section{border:0; background:#fff}
+      a{color:#000}
+      .btn{display:none}
+    }
+    /* Light mode if user prefers */
+    @media (prefers-color-scheme: light){
+      :root{--bg:#fff; --card:#fff; --fg:#1b1f2a; --muted:#667085; --brand:#1e66f5; --chip:#eef2f7; --line:#e5e7ef}
+      body{background:#f6f7fb}
+      .pfp{border-color:#e6e8f0}
+      .project-card{background:#fff}
+    }
+  </style>
 
-        header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .profile-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 1rem;
-        }
-
-        .contact-info {
-            color: #666;
-            margin-bottom: 1rem;
-        }
-
-        .contact-info a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-
-        section {
-            margin-bottom: 2rem;
-        }
-
-        h2 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .education-item, .experience-item, .project-item {
-            margin-bottom: 1.5rem;
-        }
-
-        .date {
-            color: #666;
-            font-style: italic;
-        }
-
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .skill-category h3 {
-            margin-bottom: 0.5rem;
-        }
-
-        .skill-list {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .skill-list li {
-            background: #f0f0f0;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.9rem;
-        }
-
-        ul.achievements {
-            margin-left: 1.5rem;
-            margin-top: 0.5rem;
-        }
-
-        .achievements li {
-            margin-bottom: 0.5rem;
-        }
-    </style>
+  <!-- JSON-LD for recruiters/SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sai Vivekanand Reddy Vangala",
+    "jobTitle": "Software & AI Engineer",
+    "email": "mailto:vangala.sa@northeastern.edu",
+    "telephone": "+1-857-465-9966",
+    "address": {"@type":"PostalAddress","addressLocality":"Boston","addressRegion":"MA","addressCountry":"US"},
+    "url": "https://sai-vivekanand.github.io",
+    "sameAs": [
+      "https://www.linkedin.com/in/sai-vivekanand-reddy-vangala/",
+      "https://github.com/sai-vivekanand"
+    ]
+  }
+  </script>
 </head>
 <body>
+  <div class="wrap">
+
+    <!-- HERO -->
     <header>
-        <img src="assets/FullSizeRender.jpg" alt="Sai Vivekanand" class="profile-img">
-        <h1>SAI VIVEKANAND</h1>
-        <div class="contact-info">
-            <p>857-465-9966 | vangala.sa@northeastern.edu</p>
-            <p>Boston, MA | <a href="https://linkedin.com/in/YourProfile">LinkedIn</a> | <a href="https://github.com/sai-vivekanand">GitHub</a></p>
+      <img class="pfp" src="assets/FullSizeRender.jpg" alt="Sai Vivekanand headshot">
+      <div class="title">
+        <h1>Sai Vivekanand</h1>
+        <div class="subtitle">Full-stack & AI engineer • Cloud, DevOps, multi-agent/RAG systems</div>
+        <div class="cta">
+          <a class="btn primary" href="resume/VSVR_RESUME.pdf" target="_blank" rel="noopener">View Résumé</a>
+          <a class="btn" href="mailto:vangala.sa@northeastern.edu">Email me</a>
+          <a class="btn" href="https://www.linkedin.com/in/sai-vivekanand-reddy-vangala/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://github.com/sai-vivekanand" target="_blank" rel="noopener">GitHub</a>
         </div>
+        <div class="chips">
+          <span class="chip">MS, Northeastern</span>
+          <span class="chip">Blue Yonder alum</span>
+          <span class="chip">Docker • K8s • Terraform</span>
+          <span class="chip">LangGraph • RAG</span>
+        </div>
+      </div>
     </header>
 
+    <!-- EXPERIENCE -->
     <section>
-        <h2>Education</h2>
-        <div class="education-item">
-            <h3>Northeastern University, Boston, USA</h3>
-            <p class="date">September 2023 - Present</p>
-            <p>Master of Science, Computer Software Engineering</p>
-            <p>Relevant Courses: Data Science Engineering, Networks & Cloud Computing, Intelligence Analytics</p>
+      <h2>Experience</h2>
+      <div class="grid">
+        <div class="item">
+          <div class="headline">
+            <div class="where">AI Engineer — Humanitarians AI</div>
+            <div class="when">Jan 2025 – May 2025 • Boston, MA</div>
+          </div>
+          <ul>
+            <li>Built multi-agent AI infra in Python/FastAPI with custom protocol for autonomous task routing.</li>
+            <li>Designed 4-tier memory system (ChromaDB vectors + OpenSearch) for retrieval at scale.</li>
+            <li>Shipped multimodal doc pipeline (10+ formats) with Gemini Vision; 95%+ OCR/table accuracy.</li>
+          </ul>
         </div>
-        <div class="education-item">
-            <h3>Birla Institute of Technology and Science, Pilani, India</h3>
-            <p class="date">August 2016 - June 2020</p>
-            <p>Bachelor of Engineering</p>
-            <p>Relevant Courses: OOPs, Algorithms, Operating Systems, Neural Networks, Distributed Systems</p>
+
+        <div class="item">
+          <div class="headline">
+            <div class="where">Software Engineer — Blue Yonder</div>
+            <div class="when">Jul 2020 – May 2022 • Hyderabad, India</div>
+          </div>
+          <ul>
+            <li>Optimized Demand Workbench data loading (Java + Oracle) to fetch only requested measures → ~40% faster initial loads.</li>
+            <li>Split “Save &amp; Calc” into Save/Calc/Reset with in-memory caching for rapid scenario tests sans DB writes.</li>
+            <li>Resolved complex full-stack defects (Java/JSP/Oracle) with robust unit tests and secure KMS/OAuth comms.</li>
+          </ul>
         </div>
+      </div>
     </section>
 
+    <!-- PROJECTS -->
     <section>
-        <h2>Technical Skills</h2>
-        <div class="skills">
-            <div class="skill-category">
-                <h3>Programming Languages</h3>
-                <ul class="skill-list">
-                    <li>Java</li>
-                    <li>Python</li>
-                    <li>C</li>
-                    <li>Go</li>
-                    <li>SQL</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3>Web Development</h3>
-                <ul class="skill-list">
-                    <li>React</li>
-                    <li>TypeScript</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3>Cloud & DevOps</h3>
-                <ul class="skill-list">
-                    <li>AWS (S3, EC2, Lambda)</li>
-                    <li>GCP</li>
-                    <li>Azure</li>
-                    <li>Terraform</li>
-                    <li>Docker</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3>Frameworks & Tools</h3>
-                <ul class="skill-list">
-                    <li>FastAPI</li>
-                    <li>Streamlit</li>
-                    <li>Airflow</li>
-                    <li>Git</li>
-                    <li>Spring</li>
-                </ul>
-            </div>
+      <h2>Selected Projects</h2>
+      <div class="grid cols-2">
+        <div class="project-card">
+          <div class="headline"><div class="where">Multi-Agent RAG System</div><div class="when">2024</div></div>
+          <ul>
+            <li>LangGraph agents orchestrate Web Search + Academic retrieval to synthesize findings.</li>
+            <li>Airflow + Docling + Pinecone pipeline for ingestion/structuring; JWT-secured FastAPI/Streamlit app.</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">LangGraph</span><span class="chip">Airflow</span><span class="chip">Pinecone</span><span class="chip">FastAPI</span>
+          </div>
         </div>
+        <div class="project-card">
+          <div class="headline"><div class="where">Cloud-Native Webapp</div><div class="when">2024</div></div>
+          <ul>
+            <li>Spring Boot + MySQL; auth & email verification; auto-scales on GCP MIGs.</li>
+            <li>Terraform IaC for 15+ resources; GitHub Actions + Packer → rolling zero-downtime deploys.</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">Spring</span><span class="chip">Terraform</span><span class="chip">GitHub Actions</span><span class="chip">Packer</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="headline"><div class="where">Parallel Diffusion</div><div class="when">2024</div></div>
+          <ul>
+            <li>CPU (Joblib/Dask) + multi-GPU pipelines; 1.9× text & 1.5× image preprocessing speedups.</li>
+            <li>Mixed-precision + PyTorch DDP for scalable training.</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">PyTorch DDP</span><span class="chip">Dask</span><span class="chip">CUDA</span>
+          </div>
+        </div>
+      </div>
     </section>
 
+    <!-- SKILLS -->
     <section>
-        <h2>Projects</h2>
-        <div class="project-item">
-            <h3>RAG Application (with AI Agents)</h3>
-            <p class="date">September 2024 - October 2024</p>
-            <ul class="achievements">
-                <li>Architected a multi-agent research system using LangGraph, orchestrating RAG, Web Search, and Academic Paper retrieval agents</li>
-                <li>Developed automated document processing pipeline using Airflow, Docling, and Pinecone</li>
-                <li>Built secure research platform using FastAPI and Streamlit with JWT authentication</li>
-            </ul>
-        </div>
-        <div class="project-item">
-            <h3>DevOps Webapp Application</h3>
-            <p class="date">January 2024 - March 2024</p>
-            <ul class="achievements">
-                <li>Created webapp with RESTful API on AWS using Terraform, S3, RDS, EC2 with KMS encryption</li>
-                <li>Implemented custom EC2 AMI with Packer, reducing setup time by 50%</li>
-                <li>Set up GitHub Actions for CI/CD with CloudWatch monitoring</li>
-            </ul>
-        </div>
+      <h2>Skills</h2>
+      <div class="chips">
+        <span class="chip">Python</span><span class="chip">Java</span><span class="chip">Go</span>
+        <span class="chip">React/TS</span><span class="chip">FastAPI</span><span class="chip">Spring</span>
+        <span class="chip">AWS/GCP</span><span class="chip">Docker</span><span class="chip">Kubernetes</span>
+        <span class="chip">Terraform</span><span class="chip">Airflow</span><span class="chip">PostgreSQL/MySQL</span>
+      </div>
     </section>
 
+    <!-- EDUCATION -->
     <section>
-        <h2>Experience</h2>
-        <div class="experience-item">
-            <h3>Software Engineer 1 - Blue Yonder</h3>
-            <p class="date">January 2022 - May 2022 | Hyderabad, India</p>
-            <ul class="achievements">
-                <li>Engineered cloud-hosted microservices replacing legacy application, enhancing system performance by 60%</li>
-                <li>Led feature enhancement initiative resulting in 12% performance increase</li>
-                <li>Implemented logging framework improving diagnostics by 20%</li>
-            </ul>
+      <h2>Education</h2>
+      <div class="item">
+        <div class="headline">
+          <div class="where">Northeastern University — MS, Computer Software Engineering</div>
+          <div class="when">Sep 2023 – Aug 2025 • Boston, MA</div>
         </div>
-        <div class="experience-item">
-            <h3>Associate Software Engineer - Blue Yonder</h3>
-            <p class="date">July 2020 - December 2021 | Hyderabad, India</p>
-            <ul class="achievements">
-                <li>Initiated CI/CD project using GitHub, Jenkins, and Helm Charts, reducing deployment times by 40%</li>
-                <li>Improved bug resolution time by 25% through enhanced debugging and communication</li>
-                <li>Experienced full SDLC including design, implementation, testing, and deployment</li>
-            </ul>
+        <div class="when">Relevant: Networks & Cloud, MLOps, Big Data & Intelligence Analytics</div>
+      </div>
+      <div class="item">
+        <div class="headline">
+          <div class="where">BITS Pilani — BE, Electronics Engineering</div>
+          <div class="when">Aug 2016 – Jun 2020 • Pilani, India</div>
         </div>
-        <div class="experience-item">
-            <h3>Product Development Intern - JDA Software Solutions</h3>
-            <p class="date">June 2019 - December 2019 | Hyderabad, India</p>
-            <ul class="achievements">
-                <li>Designed user interactive screens using HTML5, CSS3, JavaScript</li>
-                <li>Achieved 95% test coverage through comprehensive unit testing</li>
-            </ul>
-        </div>
+        <div class="when">Relevant: OOP, DBMS, Algorithms, OS, Neural Networks, Distributed Systems</div>
+      </div>
     </section>
+
+    <footer>© <script>document.write(new Date().getFullYear())</script> Sai Vivekanand</footer>
+  </div>
 </body>
 </html>
