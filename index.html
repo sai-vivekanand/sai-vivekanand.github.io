@@ -3,44 +3,82 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
   <title>Sai Vivekanand — Software & AI Engineer</title>
   <meta name="description" content="Full-stack & AI engineer: cloud infra, DevOps, multi-agent/RAG systems. Blue Yonder alum; MS at Northeastern.">
   <link rel="icon" href="assets/vivek.png" />
   <!-- Open Graph / Twitter -->
   <meta property="og:title" content="Sai Vivekanand — Software & AI Engineer">
   <meta property="og:description" content="Full-stack & AI engineer: cloud infra, DevOps, multi-agent/RAG systems. Blue Yonder alum; MS at Northeastern.">
-  <meta property="og:image" content="assets/og.jpg">
+  <meta property="og:image" content="assets/og.jpg"><!-- create 1200x630 banner as assets/og.jpg -->
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
 
   <style>
+    /* ========= THEME TOKENS ========= */
     :root{
-      --bg:#0b0c10; --card:#111217; --muted:#8b8e98; --fg:#e8e8ea; --brand:#5aa9ff; --chip:#1a1c22; --line:#22242c;
+      /* default (dark) */
+      --bg:#0b0c10; --card:#111217; --muted:#8b8e98; --fg:#e8e8ea;
+      --brand:#5aa9ff; --chip:#1a1c22; --line:#22242c;
+      --btn:#171923; --btnText:#e8e8ea; --btnTextOnBrand:#081a2d;
     }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#f7f9fc; --card:#ffffff; --muted:#616a78; --fg:#1a1f2b;
+        --brand:#1e66f5; --chip:#eef2f7; --line:#e5e9f2;
+        --btn:#ffffff; --btnText:#1a1f2b; --btnTextOnBrand:#ffffff;
+      }
+    }
+    /* Forced theme via toggle overrides */
+    :root[data-theme="light"]{
+      --bg:#f7f9fc; --card:#ffffff; --muted:#616a78; --fg:#1a1f2b;
+      --brand:#1e66f5; --chip:#eef2f7; --line:#e5e9f2;
+      --btn:#ffffff; --btnText:#1a1f2b; --btnTextOnBrand:#ffffff;
+    }
+    :root[data-theme="dark"]{
+      --bg:#0b0c10; --card:#111217; --muted:#8b8e98; --fg:#e8e8ea;
+      --brand:#5aa9ff; --chip:#1a1c22; --line:#22242c;
+      --btn:#171923; --btnText:#e8e8ea; --btnTextOnBrand:#081a2d;
+    }
+
+    /* ========= BASE ========= */
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
     body{
-      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
-      color:var(--fg); background:linear-gradient(180deg,#0b0c10,#0f1016 40%,#0b0c10);
-      -webkit-font-smoothing:antialiased; max-width: 1100px; margin:0 auto; padding:24px;
+      font: 16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+      color:var(--fg);
+      background:linear-gradient(180deg,#0b0c10,#0f1016 40%,#0b0c10); /* dark gradient */
+      -webkit-font-smoothing:antialiased;
+      max-width:1100px; margin:0 auto; padding:24px;
+    }
+    /* flatten background in light mode for cleanliness */
+    @media (prefers-color-scheme: light){
+      body{ background:var(--bg); }
     }
     a{color:var(--brand); text-decoration:none}
     a:hover{text-decoration:underline}
     .wrap{display:grid; gap:28px}
+
+    /* ========= HERO ========= */
     header{
       display:grid; gap:18px; padding:24px; border:1px solid var(--line); border-radius:18px; background:var(--card);
-      align-items:center; grid-template-columns: 120px 1fr; 
+      align-items:center; grid-template-columns: 120px 1fr;
     }
-    .pfp{width:110px;height:110px;border-radius:50%;object-fit:cover;border:2px solid #1f2330}
+    .pfp{width:110px;height:110px;border-radius:50%;object-fit:cover;border:2px solid var(--line)}
     .title h1{margin:0;font-size:28px}
     .subtitle{color:var(--muted); margin-top:6px}
     .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:10px}
     .btn{
       display:inline-block; padding:10px 14px; border-radius:12px; border:1px solid var(--line);
-      background:#171923; color:var(--fg); text-decoration:none; font-weight:600;
+      background:var(--btn); color:var(--btnText); text-decoration:none; font-weight:600; cursor:pointer;
     }
-    .btn.primary{background:var(--brand); color:#081a2d; border-color:transparent}
+    .btn.primary{background:var(--brand); color:var(--btnTextOnBrand); border-color:transparent}
     .btn:hover{filter:brightness(1.05)}
+    .chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
+    .chip{padding:6px 10px; border-radius:999px; background:var(--chip); border:1px solid var(--line); color:#cfd2da; font-size:13px}
+    :root[data-theme="light"] .chip{color:#344055}
+
+    /* ========= SECTIONS ========= */
     section{padding:20px 24px; border:1px solid var(--line); border-radius:18px; background:var(--card)}
     h2{margin:0 0 12px 0; font-size:20px}
     .grid{display:grid; gap:16px}
@@ -52,23 +90,16 @@
     .when,.loc{color:var(--muted); font-size:14px}
     ul{margin:8px 0 0 18px}
     li{margin:6px 0}
-    .chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
-    .chip{padding:6px 10px; border-radius:999px; background:var(--chip); border:1px solid var(--line); color:#cfd2da; font-size:13px}
     .project-card{border:1px solid var(--line); border-radius:14px; padding:14px; background:#0f1117}
+    :root[data-theme="light"] .project-card{background:#fff}
+
+    /* ========= FOOTER & PRINT ========= */
     footer{color:var(--muted); text-align:center; padding:10px}
-    /* Print résumé-like */
     @media print{
       body{background:#fff; color:#000; padding:0; max-width:none}
       header,section{border:0; background:#fff}
       a{color:#000}
       .btn{display:none}
-    }
-    /* Light mode if user prefers */
-    @media (prefers-color-scheme: light){
-      :root{--bg:#fff; --card:#fff; --fg:#1b1f2a; --muted:#667085; --brand:#1e66f5; --chip:#eef2f7; --line:#e5e7ef}
-      body{background:#f6f7fb}
-      .pfp{border-color:#e6e8f0}
-      .project-card{background:#fff}
     }
   </style>
 
@@ -104,6 +135,7 @@
           <a class="btn" href="mailto:vangala.sa@northeastern.edu">Email me</a>
           <a class="btn" href="https://www.linkedin.com/in/sai-vivekanand-reddy-vangala/" target="_blank" rel="noopener">LinkedIn</a>
           <a class="btn" href="https://github.com/sai-vivekanand" target="_blank" rel="noopener">GitHub</a>
+          <button class="btn" id="themeToggle" type="button" aria-label="Toggle color theme">Toggle theme</button>
         </div>
         <div class="chips">
           <span class="chip">MS, Northeastern</span>
@@ -137,7 +169,7 @@
           </div>
           <ul>
             <li>Optimized Demand Workbench data loading (Java + Oracle) to fetch only requested measures → ~40% faster initial loads.</li>
-            <li>Split “Save &amp; Calc” into Save/Calc/Reset with in-memory caching for rapid scenario tests sans DB writes.</li>
+            <li>Split “Save &amp; Calc” into Save/Calc/Reset with in-memory caching for rapid scenario tests without DB writes.</li>
             <li>Resolved complex full-stack defects (Java/JSP/Oracle) with robust unit tests and secure KMS/OAuth comms.</li>
           </ul>
         </div>
@@ -213,5 +245,20 @@
 
     <footer>© <script>document.write(new Date().getFullYear())</script> Sai Vivekanand</footer>
   </div>
+
+  <!-- Theme toggle logic (persists choice) -->
+  <script>
+    (function(){
+      const root = document.documentElement;
+      const saved = localStorage.getItem('theme'); // 'light' | 'dark' | null
+      if (saved) root.dataset.theme = saved;
+      const btn = document.getElementById('themeToggle');
+      btn?.addEventListener('click', () => {
+        const next = root.dataset.theme === 'light' ? 'dark' : 'light';
+        root.dataset.theme = next;
+        localStorage.setItem('theme', next);
+      });
+    })();
+  </script>
 </body>
 </html>
