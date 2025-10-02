@@ -3,262 +3,145 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="color-scheme" content="light dark" />
-  <title>Sai Vivekanand — Software & AI Engineer</title>
-  <meta name="description" content="Full-stack & AI engineer: cloud infra, DevOps, multi-agent/RAG systems. Blue Yonder alum; MS at Northeastern.">
-  <link rel="icon" href="assets/vivek.png" />
-  <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="Sai Vivekanand — Software & AI Engineer">
-  <meta property="og:description" content="Full-stack & AI engineer: cloud infra, DevOps, multi-agent/RAG systems. Blue Yonder alum; MS at Northeastern.">
-  <meta property="og:image" content="assets/og.jpg"><!-- create 1200x630 banner as assets/og.jpg -->
-  <meta property="og:type" content="website">
+  <title>Sai Vivekanand Reddy | Software & AI Engineer</title>
+  <meta name="description" content="Portfolio of Sai Vivekanand Reddy, a software and AI engineer specializing in cloud-native systems, distributed computing, and intelligent applications.">
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <meta property="og:title" content="Sai Vivekanand Reddy | Software & AI Engineer">
+  <meta property="og:description" content="Building scalable systems and intelligent solutions at the intersection of cloud and AI.">
+  <meta property="og:image" content="assets/og-banner.jpg">
   <meta name="twitter:card" content="summary_large_image">
-
-  <style>
-    /* ========= THEME TOKENS ========= */
-    :root{
-      /* default (dark) */
-      --bg:#0b0c10; --card:#111217; --muted:#8b8e98; --fg:#e8e8ea;
-      --brand:#5aa9ff; --chip:#1a1c22; --line:#22242c;
-      --btn:#171923; --btnText:#e8e8ea; --btnTextOnBrand:#081a2d;
-    }
-    @media (prefers-color-scheme: light){
-      :root{
-        --bg:#f7f9fc; --card:#ffffff; --muted:#616a78; --fg:#1a1f2b;
-        --brand:#1e66f5; --chip:#eef2f7; --line:#e5e9f2;
-        --btn:#ffffff; --btnText:#1a1f2b; --btnTextOnBrand:#ffffff;
-      }
-    }
-    /* Forced theme via toggle overrides */
-    :root[data-theme="light"]{
-      --bg:#f7f9fc; --card:#ffffff; --muted:#616a78; --fg:#1a1f2b;
-      --brand:#1e66f5; --chip:#eef2f7; --line:#e5e9f2;
-      --btn:#ffffff; --btnText:#1a1f2b; --btnTextOnBrand:#ffffff;
-    }
-    :root[data-theme="dark"]{
-      --bg:#0b0c10; --card:#111217; --muted:#8b8e98; --fg:#e8e8ea;
-      --brand:#5aa9ff; --chip:#1a1c22; --line:#22242c;
-      --btn:#171923; --btnText:#e8e8ea; --btnTextOnBrand:#081a2d;
-    }
-
-    /* ========= BASE ========= */
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font: 16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
-      color:var(--fg);
-      background:linear-gradient(180deg,#0b0c10,#0f1016 40%,#0b0c10); /* dark gradient */
-      -webkit-font-smoothing:antialiased;
-      max-width:1100px; margin:0 auto; padding:24px;
-    }
-    /* flatten background in light mode for cleanliness */
-    @media (prefers-color-scheme: light){
-      body{ background:var(--bg); }
-    }
-    a{color:var(--brand); text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{display:grid; gap:28px}
-
-    /* ========= HERO ========= */
-    header{
-      display:grid; gap:18px; padding:24px; border:1px solid var(--line); border-radius:18px; background:var(--card);
-      align-items:center; grid-template-columns: 120px 1fr;
-    }
-    .pfp{width:110px;height:110px;border-radius:50%;object-fit:cover;border:2px solid var(--line)}
-    .title h1{margin:0;font-size:28px}
-    .subtitle{color:var(--muted); margin-top:6px}
-    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:10px}
-    .btn{
-      display:inline-block; padding:10px 14px; border-radius:12px; border:1px solid var(--line);
-      background:var(--btn); color:var(--btnText); text-decoration:none; font-weight:600; cursor:pointer;
-    }
-    .btn.primary{background:var(--brand); color:var(--btnTextOnBrand); border-color:transparent}
-    .btn:hover{filter:brightness(1.05)}
-    .chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
-    .chip{padding:6px 10px; border-radius:999px; background:var(--chip); border:1px solid var(--line); color:#cfd2da; font-size:13px}
-    :root[data-theme="light"] .chip{color:#344055}
-
-    /* ========= SECTIONS ========= */
-    section{padding:20px 24px; border:1px solid var(--line); border-radius:18px; background:var(--card)}
-    h2{margin:0 0 12px 0; font-size:20px}
-    .grid{display:grid; gap:16px}
-    @media(min-width:920px){ .grid.cols-2{grid-template-columns:1fr 1fr} }
-    .item{padding:14px 0; border-top:1px dashed #242633}
-    .item:first-child{border-top:0}
-    .headline{display:flex; gap:8px; justify-content:space-between; align-items:baseline; flex-wrap:wrap}
-    .where{font-weight:700}
-    .when,.loc{color:var(--muted); font-size:14px}
-    ul{margin:8px 0 0 18px}
-    li{margin:6px 0}
-    .project-card{border:1px solid var(--line); border-radius:14px; padding:14px; background:#0f1117}
-    :root[data-theme="light"] .project-card{background:#fff}
-
-    /* ========= FOOTER & PRINT ========= */
-    footer{color:var(--muted); text-align:center; padding:10px}
-    @media print{
-      body{background:#fff; color:#000; padding:0; max-width:none}
-      header,section{border:0; background:#fff}
-      a{color:#000}
-      .btn{display:none}
-    }
-  </style>
-
-  <!-- JSON-LD for recruiters/SEO -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Sai Vivekanand Reddy Vangala",
-    "jobTitle": "Software & AI Engineer",
-    "email": "mailto:vangala.sa@northeastern.edu",
-    "telephone": "+1-857-465-9966",
-    "address": {"@type":"PostalAddress","addressLocality":"Boston","addressRegion":"MA","addressCountry":"US"},
-    "url": "https://sai-vivekanand.github.io",
-    "sameAs": [
-      "https://www.linkedin.com/in/sai-vivekanand-reddy-vangala/",
-      "https://github.com/sai-vivekanand"
-    ]
-  }
-  </script>
 </head>
-<body>
-  <div class="wrap">
 
-    <!-- HERO -->
-    <header>
-      <img class="pfp" src="assets/FullSizeRender.jpg" alt="Sai Vivekanand headshot">
-      <div class="title">
-        <h1>Sai Vivekanand</h1>
-        <div class="subtitle">Full-stack & AI engineer • Cloud, DevOps, multi-agent/RAG systems</div>
-        <div class="cta">
-          <a class="btn primary" href="resume/VSVR_RESUME_STRIPE.pdf" target="_blank" rel="noopener">View Résumé</a>
-          <a class="btn" href="mailto:vangala.sa@northeastern.edu">Email me</a>
-          <a class="btn" href="https://www.linkedin.com/in/sai-vivekanand-reddy-vangala/" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn" href="https://github.com/sai-vivekanand" target="_blank" rel="noopener">GitHub</a>
-          <button class="btn" id="themeToggle" type="button" aria-label="Toggle color theme">Toggle theme</button>
-        </div>
-        <div class="chips">
-          <span class="chip">MS, Northeastern</span>
-          <span class="chip">Blue Yonder alum</span>
-          <span class="chip">Docker • K8s • Terraform</span>
-          <span class="chip">LangGraph • RAG</span>
+<body>
+  <div class="container">
+    <header class="hero">
+      <div class="hero-text">
+        <h1>Sai Vivekanand Reddy</h1>
+        <h2>Building Scalable Systems & Intelligent Solutions</h2>
+        <p>
+          I'm a Software Engineer with a Master's degree in Computer Software Engineering, specializing in the intersection of cloud infrastructure and artificial intelligence. My passion is designing and building high-performance, distributed systems that solve real-world problems—from optimizing enterprise software to architecting multi-agent AI platforms.
+        </p>
+        <div class="hero-buttons">
+          <a href="resume/VSVR_RESUME.pdf" class="btn btn-primary" target="_blank" rel="noopener">View Résumé</a>
+          <a href="https://github.com/sai-vivekanand" class="btn" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/sai-vivekanand-reddy-vangala/" class="btn" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:vangala.sa@northeastern.edu" class="btn">Email Me</a>
         </div>
       </div>
+      <img src="assets/FullSizeRender.jpg" alt="Sai Vivekanand Reddy" class="hero-image">
     </header>
 
-    <!-- EXPERIENCE -->
-    <section>
-      <h2>Experience</h2>
-      <div class="grid">
-        <div class="item">
-          <div class="headline">
-            <div class="where">AI Engineer — Humanitarians AI</div>
-            <div class="when">Jan 2025 – May 2025 • Boston, MA</div>
-          </div>
-          <ul>
-            <li>Built multi-agent AI infra in Python/FastAPI with custom protocol for autonomous task routing.</li>
-            <li>Designed 4-tier memory system (ChromaDB vectors + OpenSearch) for retrieval at scale.</li>
-            <li>Shipped multimodal doc pipeline (10+ formats) with Gemini Vision; 95%+ OCR/table accuracy.</li>
-          </ul>
-        </div>
+    <main>
+      <section id="projects">
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+          
+          <article class="project-card">
+            <img src="assets/project-gcp.png" alt="Cloud-Native Web App on GCP Architecture Diagram" class="project-image">
+            <div class="project-content">
+              <h3>Cloud-Native Web App on GCP</h3>
+              <p class="project-summary">A full-stack, auto-scaling web application built on Google Cloud Platform with a focus on cloud-native principles and complete CI/CD automation.</p>
+              <ul>
+                <li>Automated infrastructure provisioning for 15+ GCP resources, reducing manual deployment time by 100% using Terraform.</li>
+                <li>Engineered a full CI/CD pipeline with GitHub Actions and Packer, slashing deployment times from hours to minutes through zero-downtime rolling updates.</li>
+              </ul>
+              <div class="tech-stack">
+                <span>Java</span><span>Spring Boot</span><span>GCP</span><span>Terraform</span><span>Docker</span><span>Kubernetes</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn" target="_blank" rel="noopener">View Code</a>
+              </div>
+            </div>
+          </article>
 
-        <div class="item">
-          <div class="headline">
-            <div class="where">Software Engineer — Blue Yonder</div>
-            <div class="when">Jul 2020 – May 2022 • Hyderabad, India</div>
-          </div>
-          <ul>
-            <li>Optimized Demand Workbench data loading (Java + Oracle) to fetch only requested measures → ~40% faster initial loads.</li>
-            <li>Split “Save &amp; Calc” into Save/Calc/Reset with in-memory caching for rapid scenario tests without DB writes.</li>
-            <li>Resolved complex full-stack defects (Java/JSP/Oracle) with robust unit tests and secure KMS/OAuth comms.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+          <article class="project-card">
+            <img src="assets/project-rag.png" alt="Multi-Agent RAG System Flowchart" class="project-image">
+            <div class="project-content">
+              <h3>Multi-Agent RAG Research System</h3>
+              <p class="project-summary">An intelligent research assistant that uses multiple AI agents to autonomously query, analyze, and synthesize complex information from diverse sources.</p>
+              <ul>
+                <li>Architected a multi-agent system using LangGraph to orchestrate parallel web search, academic paper retrieval, and RAG agents.</li>
+                <li>Automated a multi-modal document ingestion pipeline using Apache Airflow to process and index files into a Pinecone vector database for efficient retrieval.</li>
+              </ul>
+              <div class="tech-stack">
+                <span>Python</span><span>LangGraph</span><span>Airflow</span><span>Pinecone</span><span>FastAPI</span><span>React</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn" target="_blank" rel="noopener">View Code</a>
+              </div>
+            </div>
+          </article>
 
-    <!-- PROJECTS -->
-    <section>
-      <h2>Selected Projects</h2>
-      <div class="grid cols-2">
-        <div class="project-card">
-          <div class="headline"><div class="where">Multi-Agent RAG System</div><div class="when">2024</div></div>
-          <ul>
-            <li>LangGraph agents orchestrate Web Search + Academic retrieval to synthesize findings.</li>
-            <li>Airflow + Docling + Pinecone pipeline for ingestion/structuring; JWT-secured FastAPI/Streamlit app.</li>
-          </ul>
-          <div class="chips">
-            <span class="chip">LangGraph</span><span class="chip">Airflow</span><span class="chip">Pinecone</span><span class="chip">FastAPI</span>
-          </div>
+          <article class="project-card">
+            <img src="assets/project-hpc.png" alt="Distributed Deep Learning Training Pipeline Diagram" class="project-image">
+            <div class="project-content">
+              <h3>Distributed Deep Learning Training Pipeline</h3>
+              <p class="project-summary">A high-performance computing project focused on accelerating model training by designing and benchmarking parallel processing techniques.</p>
+              <ul>
+                <li>Achieved a 3.7x speedup on 4 GPUs and reduced training time by 66% by implementing PyTorch's Distributed Data Parallelism (DDP) with Automatic Mixed Precision (AMP).</li>
+                <li>Designed and benchmarked multi-GPU pipelines for a U-Net architecture on a high-performance cluster, showcasing expertise in distributed systems.</li>
+              </ul>
+              <div class="tech-stack">
+                <span>Python</span><span>PyTorch</span><span>DDP</span><span>HPC</span><span>CUDA</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn" target="_blank" rel="noopener">View Code</a>
+              </div>
+            </div>
+          </article>
         </div>
-        <div class="project-card">
-          <div class="headline"><div class="where">Cloud-Native Webapp</div><div class="when">2024</div></div>
-          <ul>
-            <li>Spring Boot + MySQL; auth & email verification; auto-scales on GCP MIGs.</li>
-            <li>Terraform IaC for 15+ resources; GitHub Actions + Packer → rolling zero-downtime deploys.</li>
-          </ul>
-          <div class="chips">
-            <span class="chip">Spring</span><span class="chip">Terraform</span><span class="chip">GitHub Actions</span><span class="chip">Packer</span>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="headline"><div class="where">Parallel Diffusion</div><div class="when">2024</div></div>
-          <ul>
-            <li>CPU (Joblib/Dask) + multi-GPU pipelines; 1.9× text & 1.5× image preprocessing speedups.</li>
-            <li>Mixed-precision + PyTorch DDP for scalable training.</li>
-          </ul>
-          <div class="chips">
-            <span class="chip">PyTorch DDP</span><span class="chip">Dask</span><span class="chip">CUDA</span>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- SKILLS -->
-    <section>
-      <h2>Skills</h2>
-      <div class="chips">
-        <span class="chip">Python</span><span class="chip">Java</span><span class="chip">Go</span>
-        <span class="chip">React/TS</span><span class="chip">FastAPI</span><span class="chip">Spring</span>
-        <span class="chip">AWS/GCP</span><span class="chip">Docker</span><span class="chip">Kubernetes</span>
-        <span class="chip">Terraform</span><span class="chip">Airflow</span><span class="chip">PostgreSQL/MySQL</span>
-      </div>
-    </section>
-
-    <!-- EDUCATION -->
-    <section>
-      <h2>Education</h2>
-      <div class="item">
-        <div class="headline">
-          <div class="where">Northeastern University — MS, Computer Software Engineering</div>
-          <div class="when">Sep 2023 – Aug 2025 • Boston, MA</div>
+      <section id="experience">
+        <h2>Work Experience</h2>
+        <div class="experience-item">
+            <h4>AI Engineer @ Humanitarians AI <span class="experience-date">Jan 2025 – May 2025</span></h4>
+            <ul>
+                <li>Engineered a multi-modal document processing engine that achieved over 95% accuracy in OCR and table extraction across 10+ file formats by integrating the Gemini Vision API.</li>
+                <li>Architected a 4-tier, persistent memory system for AI agents, enabling semantic search by leveraging ChromaDB for vector storage and OpenSearch for immutable audit logging.</li>
+            </ul>
         </div>
-        <div class="when">Relevant: Networks & Cloud, MLOps, Big Data & Intelligence Analytics</div>
-      </div>
-      <div class="item">
-        <div class="headline">
-          <div class="where">BITS Pilani — BE, Electronics Engineering</div>
-          <div class="when">Aug 2016 – Jun 2020 • Pilani, India</div>
+        <div class="experience-item">
+            <h4>Software Engineer @ Blue Yonder <span class="experience-date">July 2020 – May 2022</span></h4>
+            <ul>
+                <li>Reduced initial load times by 40% for data-heavy users by re-architecting the data-loading mechanism, implementing dynamic SQL query construction in Java.</li>
+                <li>Enhanced user productivity by 25% by re-engineering a monolithic 'Save & Calc' feature, using server-side in-memory caching to enable rapid, database-free forecast simulations.</li>
+            </ul>
         </div>
-        <div class="when">Relevant: OOP, DBMS, Algorithms, OS, Neural Networks, Distributed Systems</div>
-      </div>
-    </section>
+      </section>
+      
+      <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skill-grid">
+            <div>
+                <h5>Languages</h5>
+                <p>Python, Java, Go, C++, SQL, Javascript, HTML/CSS</p>
+            </div>
+            <div>
+                <h5>AI / ML</h5>
+                <p>PyTorch, TensorFlow, LangChain, LangGraph, NLP, Scikit-learn, RAG</p>
+            </div>
+            <div>
+                <h5>Cloud & DevOps</h5>
+                <p>GCP, AWS, Docker, Kubernetes, Terraform, CI/CD, Packer, Airflow</p>
+            </div>
+            <div>
+                <h5>Frameworks & Tools</h5>
+                <p>Spring Boot, FastAPI, React, Git, Spark, PostgreSQL, MySQL, Redis</p>
+            </div>
+        </div>
+      </section>
+    </main>
 
-    <footer>© <script>document.write(new Date().getFullYear())</script> Sai Vivekanand</footer>
+    <footer class="footer">
+      <p>Designed & Built by Sai Vivekanand Reddy &bull; © 2025</p>
+    </footer>
+
   </div>
-
-  <!-- Theme toggle logic (persists choice) -->
-  <script>
-    (function(){
-      const root = document.documentElement;
-      const saved = localStorage.getItem('theme'); // 'light' | 'dark' | null
-      if (saved) root.dataset.theme = saved;
-      const btn = document.getElementById('themeToggle');
-      btn?.addEventListener('click', () => {
-        const next = root.dataset.theme === 'light' ? 'dark' : 'light';
-        root.dataset.theme = next;
-        localStorage.setItem('theme', next);
-      });
-    })();
-  </script>
 </body>
 </html>
