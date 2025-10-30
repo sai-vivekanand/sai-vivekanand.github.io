@@ -1,0 +1,92 @@
+/* ========= THEME TOKENS ========= */
+:root{
+  --bg:#0b0c10; --card:#111217; --muted:#8b8e98; --fg:#e8e8ea;
+  --brand:#5aa9ff; --chip:#1a1c22; --line:#22242c;
+  --btn:#171923; --btnText:#e8e8ea; --btnTextOnBrand:#081a2d;
+}
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#f7f9fc; --card:#ffffff; --muted:#616a78; --fg:#1a1f2b;
+    --brand:#1e66f5; --chip:#eef2f7; --line:#e5e9f2;
+    --btn:#ffffff; --btnText:#1a1f2b; --btnTextOnBrand:#ffffff;
+  }
+}
+:root[data-theme="light"]{
+  --bg:#f7f9fc; --card:#ffffff; --muted:#616a78; --fg:#1a1f2b;
+  --brand:#1e66f5; --chip:#eef2f7; --line:#e5e9f2;
+  --btn:#ffffff; --btnText:#1a1f2b; --btnTextOnBrand:#ffffff;
+}
+:root[data-theme="dark"]{
+  --bg:#0b0c10; --card:#111217; --muted:#8b8e98; --fg:#e8e8ea;
+  --brand:#5aa9ff; --chip:#1a1c22; --line:#22242c;
+  --btn:#171923; --btnText:#e8e8ea; --btnTextOnBrand:#081a2d;
+}
+
+/* ========= BASE ========= */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font: 16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+  color:var(--fg);
+  background:linear-gradient(180deg,#0b0c10,#0f1016 40%,#0b0c10);
+  -webkit-font-smoothing:antialiased;
+  max-width:1100px; margin:0 auto; padding:24px;
+}
+@media (prefers-color-scheme: light){
+  body{ background:var(--bg); }
+}
+a{color:var(--brand); text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{display:grid; gap:28px}
+.skip{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip:focus{left:16px;top:16px;width:auto;height:auto;background:var(--brand);color:var(--btnTextOnBrand);padding:8px 10px;border-radius:8px}
+
+/* ========= NAV ========= */
+.topnav{display:flex;align-items:center;gap:16px;padding:10px 14px;border:1px solid var(--line);border-radius:12px;background:var(--card);position:sticky;top:12px;backdrop-filter:saturate(1.2) blur(6px);z-index:10}
+.brand{display:flex;align-items:center;gap:10px}
+.brand .logo{width:22px;height:22px;border-radius:4px}
+.brand-text{font-weight:700}
+.spacer{flex:1}
+.navlinks{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.navlinks a{padding:6px 8px;border-radius:8px}
+.btn.ghost{border:1px solid var(--line);background:var(--btn);color:var(--btnText);padding:6px 10px;border-radius:10px;cursor:pointer}
+.btn.ghost:hover{filter:brightness(1.06)}
+
+/* ========= HERO ========= */
+.hero{display:grid;gap:18px;padding:24px;border:1px solid var(--line);border-radius:18px;background:var(--card);align-items:center;grid-template-columns: 120px 1fr}
+.pfp{width:110px;height:110px;border-radius:50%;object-fit:cover;border:2px solid var(--line)}
+.title h1{margin:0;font-size:28px}
+.subtitle{color:var(--muted); margin-top:6px}
+.cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:10px}
+.btn{display:inline-block; padding:10px 14px; border-radius:12px; border:1px solid var(--line); background:var(--btn); color:var(--btnText); text-decoration:none; font-weight:600; cursor:pointer}
+.btn.primary{background:var(--brand); color:var(--btnTextOnBrand); border-color:transparent}
+.btn:hover{filter:brightness(1.05)}
+.chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
+.chip{padding:6px 10px; border-radius:999px; background:var(--chip); border:1px solid var(--line); color:#cfd2da; font-size:13px}
+:root[data-theme="light"] .chip{color:#344055}
+
+/* ========= SECTIONS ========= */
+section{padding:20px 24px; border:1px solid var(--line); border-radius:18px; background:var(--card)}
+h2{margin:0 0 12px 0; font-size:20px}
+.grid{display:grid; gap:16px}
+@media(min-width:920px){ .grid.cols-2{grid-template-columns:1fr 1fr} }
+.item{padding:14px 0; border-top:1px dashed #242633}
+.item:first-child{border-top:0}
+.headline{display:flex; gap:8px; justify-content:space-between; align-items:baseline; flex-wrap:wrap}
+.where{font-weight:700}
+.when,.loc{color:var(--muted); font-size:14px}
+ul{margin:8px 0 0 18px}
+li{margin:6px 0}
+.project-card{border:1px solid var(--line); border-radius:14px; padding:14px; background:#0f1117}
+:root[data-theme="light"] .project-card{background:#fff}
+
+/* ========= FOOTER & PRINT ========= */
+footer{color:var(--muted); text-align:center; padding:10px}
+@media print{
+  body{background:#fff; color:#000; padding:0; max-width:none}
+  .topnav,.btn{display:none}
+  header,section{border:0; background:#fff}
+  a{color:#000}
+}
+
+

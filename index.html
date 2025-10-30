@@ -5,103 +5,16 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="color-scheme" content="light dark" />
   <title>Sai Vivekanand — Software & AI Engineer</title>
-  <meta name="description" content="Full-stack & AI engineer: cloud infra, DevOps, multi-agent/RAG systems. Blue Yonder alum; MS at Northeastern.">
+  <meta name="description" content="Full‑stack & AI engineer focused on cloud, DevOps, and applied AI systems.">
   <link rel="icon" href="assets/vivek.png" />
+  <link rel="preload" href="assets/FullSizeRender.jpg" as="image" />
+  <link rel="stylesheet" href="assets/styles.css" />
   <!-- Open Graph / Twitter -->
   <meta property="og:title" content="Sai Vivekanand — Software & AI Engineer">
-  <meta property="og:description" content="Full-stack & AI engineer: cloud infra, DevOps, multi-agent/RAG systems. Blue Yonder alum; MS at Northeastern.">
-  <meta property="og:image" content="assets/og.jpg"><!-- create 1200x630 banner as assets/og.jpg -->
+  <meta property="og:description" content="Full‑stack & AI engineer focused on cloud, DevOps, and applied AI systems.">
+  <meta property="og:image" content="assets/og.jpg">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-
-  <style>
-    /* ========= THEME TOKENS ========= */
-    :root{
-      /* default (dark) */
-      --bg:#0b0c10; --card:#111217; --muted:#8b8e98; --fg:#e8e8ea;
-      --brand:#5aa9ff; --chip:#1a1c22; --line:#22242c;
-      --btn:#171923; --btnText:#e8e8ea; --btnTextOnBrand:#081a2d;
-    }
-    @media (prefers-color-scheme: light){
-      :root{
-        --bg:#f7f9fc; --card:#ffffff; --muted:#616a78; --fg:#1a1f2b;
-        --brand:#1e66f5; --chip:#eef2f7; --line:#e5e9f2;
-        --btn:#ffffff; --btnText:#1a1f2b; --btnTextOnBrand:#ffffff;
-      }
-    }
-    /* Forced theme via toggle overrides */
-    :root[data-theme="light"]{
-      --bg:#f7f9fc; --card:#ffffff; --muted:#616a78; --fg:#1a1f2b;
-      --brand:#1e66f5; --chip:#eef2f7; --line:#e5e9f2;
-      --btn:#ffffff; --btnText:#1a1f2b; --btnTextOnBrand:#ffffff;
-    }
-    :root[data-theme="dark"]{
-      --bg:#0b0c10; --card:#111217; --muted:#8b8e98; --fg:#e8e8ea;
-      --brand:#5aa9ff; --chip:#1a1c22; --line:#22242c;
-      --btn:#171923; --btnText:#e8e8ea; --btnTextOnBrand:#081a2d;
-    }
-
-    /* ========= BASE ========= */
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font: 16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
-      color:var(--fg);
-      background:linear-gradient(180deg,#0b0c10,#0f1016 40%,#0b0c10); /* dark gradient */
-      -webkit-font-smoothing:antialiased;
-      max-width:1100px; margin:0 auto; padding:24px;
-    }
-    /* flatten background in light mode for cleanliness */
-    @media (prefers-color-scheme: light){
-      body{ background:var(--bg); }
-    }
-    a{color:var(--brand); text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{display:grid; gap:28px}
-
-    /* ========= HERO ========= */
-    header{
-      display:grid; gap:18px; padding:24px; border:1px solid var(--line); border-radius:18px; background:var(--card);
-      align-items:center; grid-template-columns: 120px 1fr;
-    }
-    .pfp{width:110px;height:110px;border-radius:50%;object-fit:cover;border:2px solid var(--line)}
-    .title h1{margin:0;font-size:28px}
-    .subtitle{color:var(--muted); margin-top:6px}
-    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:10px}
-    .btn{
-      display:inline-block; padding:10px 14px; border-radius:12px; border:1px solid var(--line);
-      background:var(--btn); color:var(--btnText); text-decoration:none; font-weight:600; cursor:pointer;
-    }
-    .btn.primary{background:var(--brand); color:var(--btnTextOnBrand); border-color:transparent}
-    .btn:hover{filter:brightness(1.05)}
-    .chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
-    .chip{padding:6px 10px; border-radius:999px; background:var(--chip); border:1px solid var(--line); color:#cfd2da; font-size:13px}
-    :root[data-theme="light"] .chip{color:#344055}
-
-    /* ========= SECTIONS ========= */
-    section{padding:20px 24px; border:1px solid var(--line); border-radius:18px; background:var(--card)}
-    h2{margin:0 0 12px 0; font-size:20px}
-    .grid{display:grid; gap:16px}
-    @media(min-width:920px){ .grid.cols-2{grid-template-columns:1fr 1fr} }
-    .item{padding:14px 0; border-top:1px dashed #242633}
-    .item:first-child{border-top:0}
-    .headline{display:flex; gap:8px; justify-content:space-between; align-items:baseline; flex-wrap:wrap}
-    .where{font-weight:700}
-    .when,.loc{color:var(--muted); font-size:14px}
-    ul{margin:8px 0 0 18px}
-    li{margin:6px 0}
-    .project-card{border:1px solid var(--line); border-radius:14px; padding:14px; background:#0f1117}
-    :root[data-theme="light"] .project-card{background:#fff}
-
-    /* ========= FOOTER & PRINT ========= */
-    footer{color:var(--muted); text-align:center; padding:10px}
-    @media print{
-      body{background:#fff; color:#000; padding:0; max-width:none}
-      header,section{border:0; background:#fff}
-      a{color:#000}
-      .btn{display:none}
-    }
-  </style>
 
   <!-- JSON-LD for recruiters/SEO -->
   <script type="application/ld+json">
@@ -113,7 +26,7 @@
     "email": "mailto:vangala.sa@northeastern.edu",
     "telephone": "+1-857-465-9966",
     "address": {"@type":"PostalAddress","addressLocality":"Boston","addressRegion":"MA","addressCountry":"US"},
-    "url": "https://sai-vivekanand.github.io",
+    "url": "https://saivivek.com",
     "sameAs": [
       "https://www.linkedin.com/in/sai-vivekanand-reddy-vangala/",
       "https://github.com/sai-vivekanand"
@@ -122,32 +35,55 @@
   </script>
 </head>
 <body>
-  <div class="wrap">
+  <a class="skip" href="#content">Skip to content</a>
+  <nav class="topnav">
+    <div class="brand">
+      <img src="assets/vivek.png" alt="Logo" class="logo" />
+      <span class="brand-text">Sai Vivekanand</span>
+    </div>
+    <div class="spacer"></div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+      <button id="themeToggle" type="button" class="btn ghost" aria-label="Toggle color theme">Theme</button>
+    </div>
+  </nav>
 
+  <main id="content" class="wrap">
     <!-- HERO -->
-    <header>
+    <header class="hero">
       <img class="pfp" src="assets/FullSizeRender.jpg" alt="Sai Vivekanand headshot">
       <div class="title">
-        <h1>Sai Vivekanand</h1>
-        <div class="subtitle">Full-stack & AI engineer • Cloud, DevOps, multi-agent/RAG systems</div>
+        <h1>Software & AI Engineer</h1>
+        <p class="subtitle">I build reliable cloud platforms and applied AI systems that ship.</p>
         <div class="cta">
-          <a class="btn primary" href="resume/VSVR_RESUME_STRIPE.pdf" target="_blank" rel="noopener">View Résumé</a>
-          <a class="btn" href="mailto:vangala.sa@northeastern.edu">Email me</a>
+          <a class="btn primary" href="resume/VSVR_RESUME.pdf" target="_blank" rel="noopener">View Résumé</a>
+          <a class="btn" href="mailto:vangala.sa@northeastern.edu">Email</a>
           <a class="btn" href="https://www.linkedin.com/in/sai-vivekanand-reddy-vangala/" target="_blank" rel="noopener">LinkedIn</a>
           <a class="btn" href="https://github.com/sai-vivekanand" target="_blank" rel="noopener">GitHub</a>
-          <button class="btn" id="themeToggle" type="button" aria-label="Toggle color theme">Toggle theme</button>
         </div>
         <div class="chips">
           <span class="chip">MS, Northeastern</span>
           <span class="chip">Blue Yonder alum</span>
+          <span class="chip">Cloud • DevOps • AI</span>
           <span class="chip">Docker • K8s • Terraform</span>
           <span class="chip">LangGraph • RAG</span>
         </div>
       </div>
     </header>
 
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About</h2>
+      <p>I’m Sai, a software and AI engineer with experience across platform, data, and application layers. I enjoy designing pragmatic systems that are observable, testable, and easy to operate. Currently looking for full-time roles in software engineering and applied AI.</p>
+    </section>
+
     <!-- EXPERIENCE -->
-    <section>
+    <section id="experience">
       <h2>Experience</h2>
       <div class="grid">
         <div class="item">
@@ -156,45 +92,47 @@
             <div class="when">Jan 2025 – May 2025 • Boston, MA</div>
           </div>
           <ul>
-            <li>Built multi-agent AI infra in Python/FastAPI with custom protocol for autonomous task routing.</li>
-            <li>Designed 4-tier memory system (ChromaDB vectors + OpenSearch) for retrieval at scale.</li>
-            <li>Shipped multimodal doc pipeline (10+ formats) with Gemini Vision; 95%+ OCR/table accuracy.</li>
+            <li>Built multi-agent AI infra in Python/FastAPI with autonomous task routing.</li>
+            <li>Designed 4-tier memory (ChromaDB + OpenSearch) for scalable retrieval.</li>
+            <li>Shipped multimodal doc pipeline with Gemini Vision; high OCR/table accuracy.</li>
           </ul>
         </div>
-
         <div class="item">
           <div class="headline">
             <div class="where">Software Engineer — Blue Yonder</div>
             <div class="when">Jul 2020 – May 2022 • Hyderabad, India</div>
           </div>
           <ul>
-            <li>Optimized Demand Workbench data loading (Java + Oracle) to fetch only requested measures → ~40% faster initial loads.</li>
-            <li>Split “Save &amp; Calc” into Save/Calc/Reset with in-memory caching for rapid scenario tests without DB writes.</li>
-            <li>Resolved complex full-stack defects (Java/JSP/Oracle) with robust unit tests and secure KMS/OAuth comms.</li>
+            <li>Optimized Demand Workbench data loads (~40% faster initial loads).</li>
+            <li>Refactored Save & Calc into staged operations enabling rapid iteration.</li>
+            <li>Resolved complex full-stack defects with strong test coverage and secure comms.</li>
           </ul>
         </div>
       </div>
     </section>
 
     <!-- PROJECTS -->
-    <section>
+    <section id="projects">
       <h2>Selected Projects</h2>
       <div class="grid cols-2">
         <div class="project-card">
           <div class="headline"><div class="where">Multi-Agent RAG System</div><div class="when">2024</div></div>
           <ul>
-            <li>LangGraph agents orchestrate Web Search + Academic retrieval to synthesize findings.</li>
-            <li>Airflow + Docling + Pinecone pipeline for ingestion/structuring; JWT-secured FastAPI/Streamlit app.</li>
+            <li>LangGraph agents orchestrate web + academic retrieval to synthesize insights.</li>
+            <li>Airflow + Docling + Pinecone pipeline; FastAPI backend and UI.</li>
           </ul>
           <div class="chips">
             <span class="chip">LangGraph</span><span class="chip">Airflow</span><span class="chip">Pinecone</span><span class="chip">FastAPI</span>
+          </div>
+          <div class="links">
+            <!-- Replace with your repo/demo links -->
           </div>
         </div>
         <div class="project-card">
           <div class="headline"><div class="where">Cloud-Native Webapp</div><div class="when">2024</div></div>
           <ul>
             <li>Spring Boot + MySQL; auth & email verification; auto-scales on GCP MIGs.</li>
-            <li>Terraform IaC for 15+ resources; GitHub Actions + Packer → rolling zero-downtime deploys.</li>
+            <li>Terraform IaC; GitHub Actions + Packer for rolling deployments.</li>
           </ul>
           <div class="chips">
             <span class="chip">Spring</span><span class="chip">Terraform</span><span class="chip">GitHub Actions</span><span class="chip">Packer</span>
@@ -203,8 +141,8 @@
         <div class="project-card">
           <div class="headline"><div class="where">Parallel Diffusion</div><div class="when">2024</div></div>
           <ul>
-            <li>CPU (Joblib/Dask) + multi-GPU pipelines; 1.9× text & 1.5× image preprocessing speedups.</li>
-            <li>Mixed-precision + PyTorch DDP for scalable training.</li>
+            <li>CPU (Joblib/Dask) + multi‑GPU pipelines; significant preprocessing speedups.</li>
+            <li>Mixed‑precision + PyTorch DDP for scalable training.</li>
           </ul>
           <div class="chips">
             <span class="chip">PyTorch DDP</span><span class="chip">Dask</span><span class="chip">CUDA</span>
@@ -214,7 +152,7 @@
     </section>
 
     <!-- SKILLS -->
-    <section>
+    <section id="skills">
       <h2>Skills</h2>
       <div class="chips">
         <span class="chip">Python</span><span class="chip">Java</span><span class="chip">Go</span>
@@ -225,7 +163,7 @@
     </section>
 
     <!-- EDUCATION -->
-    <section>
+    <section id="education">
       <h2>Education</h2>
       <div class="item">
         <div class="headline">
@@ -243,22 +181,19 @@
       </div>
     </section>
 
-    <footer>© <script>document.write(new Date().getFullYear())</script> Sai Vivekanand</footer>
-  </div>
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Reach out by email or connect on LinkedIn. I’m open to roles in software engineering and applied AI.</p>
+      <div class="cta">
+        <a class="btn" href="mailto:vangala.sa@northeastern.edu">vangala.sa@northeastern.edu</a>
+        <a class="btn" href="https://www.linkedin.com/in/sai-vivekanand-reddy-vangala/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
 
-  <!-- Theme toggle logic (persists choice) -->
-  <script>
-    (function(){
-      const root = document.documentElement;
-      const saved = localStorage.getItem('theme'); // 'light' | 'dark' | null
-      if (saved) root.dataset.theme = saved;
-      const btn = document.getElementById('themeToggle');
-      btn?.addEventListener('click', () => {
-        const next = root.dataset.theme === 'light' ? 'dark' : 'light';
-        root.dataset.theme = next;
-        localStorage.setItem('theme', next);
-      });
-    })();
-  </script>
+    <footer>© <script>document.write(new Date().getFullYear())</script> Sai Vivekanand</footer>
+  </main>
+
+  <script src="assets/main.js"></script>
 </body>
 </html>
