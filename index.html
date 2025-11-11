@@ -73,62 +73,40 @@
     <!-- TECH STACK -->
     <section id="tech-stack" class="section">
       <h2 class="section-title">Technical Skills</h2>
-      <div class="tech-grid">
-        <div class="tech-item">
-          <div class="tech-icon">🐍</div>
-          <span class="tech-name">Python</span>
+      <div class="skills-list">
+        <div class="skill-category">
+          <h3 class="skill-category-title">Languages</h3>
+          <ul class="skill-items">
+            <li>Python</li>
+            <li>Java</li>
+            <li>Go</li>
+          </ul>
         </div>
-        <div class="tech-item">
-          <div class="tech-icon">☕</div>
-          <span class="tech-name">Java</span>
+        <div class="skill-category">
+          <h3 class="skill-category-title">AI/ML</h3>
+          <ul class="skill-items">
+            <li>PyTorch</li>
+            <li>LangChain</li>
+          </ul>
         </div>
-        <div class="tech-item">
-          <div class="tech-icon">🐹</div>
-          <span class="tech-name">Go</span>
+        <div class="skill-category">
+          <h3 class="skill-category-title">Cloud & DevOps</h3>
+          <ul class="skill-items">
+            <li>AWS</li>
+            <li>GCP</li>
+            <li>Docker</li>
+            <li>Kubernetes</li>
+            <li>Terraform</li>
+          </ul>
         </div>
-        <div class="tech-item">
-          <div class="tech-icon">⚛️</div>
-          <span class="tech-name">React</span>
-        </div>
-        <div class="tech-item">
-          <div class="tech-icon">☁️</div>
-          <span class="tech-name">AWS</span>
-        </div>
-        <div class="tech-item">
-          <div class="tech-icon">☁️</div>
-          <span class="tech-name">GCP</span>
-        </div>
-        <div class="tech-item">
-          <div class="tech-icon">🐳</div>
-          <span class="tech-name">Docker</span>
-        </div>
-        <div class="tech-item">
-          <div class="tech-icon">⚓</div>
-          <span class="tech-name">Kubernetes</span>
-        </div>
-        <div class="tech-item">
-          <div class="tech-icon">🏗️</div>
-          <span class="tech-name">Terraform</span>
-        </div>
-        <div class="tech-item">
-          <div class="tech-icon">🔥</div>
-          <span class="tech-name">PyTorch</span>
-        </div>
-        <div class="tech-item">
-          <div class="tech-icon">🔗</div>
-          <span class="tech-name">LangChain</span>
-        </div>
-        <div class="tech-item">
-          <div class="tech-icon">⚡</div>
-          <span class="tech-name">FastAPI</span>
-        </div>
-        <div class="tech-item">
-          <div class="tech-icon">🌱</div>
-          <span class="tech-name">Spring Boot</span>
-        </div>
-        <div class="tech-item">
-          <div class="tech-icon">🐘</div>
-          <span class="tech-name">PostgreSQL</span>
+        <div class="skill-category">
+          <h3 class="skill-category-title">Frameworks & Tools</h3>
+          <ul class="skill-items">
+            <li>React</li>
+            <li>FastAPI</li>
+            <li>Spring Boot</li>
+            <li>PostgreSQL</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -143,7 +121,24 @@
             <div class="timeline-job-title">AI Engineer</div>
             <div class="timeline-company">Humanitarians AI</div>
             <div class="timeline-dates">Jan 2025 – May 2025</div>
-            <p class="timeline-description">Building multi-agent AI infrastructure with autonomous task routing and scalable retrieval systems.</p>
+            <ul class="timeline-bullets">
+              <li>Built multi-agent AI infrastructure in Python/FastAPI with autonomous task routing</li>
+              <li>Designed 4-tier memory (ChromaDB + OpenSearch) for scalable retrieval</li>
+              <li>Shipped multimodal document pipeline with Gemini Vision; high OCR/table accuracy</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-job-title">Member of Technical Staff</div>
+            <div class="timeline-company">Puddl</div>
+            <div class="timeline-dates">June 2022 – August 2023</div>
+            <ul class="timeline-bullets">
+              <li>Developed and maintained core platform features using modern web technologies</li>
+              <li>Collaborated with cross-functional teams to deliver scalable solutions</li>
+              <li>Implemented robust testing and deployment practices</li>
+            </ul>
           </div>
         </div>
         <div class="timeline-item">
@@ -152,7 +147,11 @@
             <div class="timeline-job-title">Software Engineer</div>
             <div class="timeline-company">Blue Yonder</div>
             <div class="timeline-dates">Jul 2020 – May 2022</div>
-            <p class="timeline-description">Optimized data loads and refactored core systems for improved performance and maintainability.</p>
+            <ul class="timeline-bullets">
+              <li>Optimized Demand Workbench data loads (~40% faster initial loads)</li>
+              <li>Refactored Save & Calc into staged operations enabling rapid iteration</li>
+              <li>Resolved complex full-stack defects with strong test coverage and secure communications</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -164,13 +163,16 @@
       <div class="projects-grid">
         <div class="project-card">
           <h3 class="project-title">Multi-Agent RAG System</h3>
-          <p class="project-description">LangGraph agents orchestrate web and academic retrieval to synthesize insights. Airflow pipeline with FastAPI backend and modern UI.</p>
+          <ul class="project-description">
+            <li>LangGraph agents orchestrate web and academic retrieval to synthesize insights</li>
+            <li>Airflow + Docling + Pinecone pipeline; FastAPI backend and UI</li>
+          </ul>
           <div class="project-tech">
             <span class="tech-tag">LangGraph</span>
             <span class="tech-tag">Airflow</span>
             <span class="tech-tag">Pinecone</span>
           </div>
-          <a href="https://github.com/sai-vivekanand" target="_blank" rel="noopener" class="project-link" aria-label="GitHub">
+          <a href="https://github.com/sai-vivekanand/Intelligent-Research-Assistant" target="_blank" rel="noopener" class="project-link" aria-label="GitHub">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
             </svg>
@@ -178,13 +180,16 @@
         </div>
         <div class="project-card">
           <h3 class="project-title">Scalable Cloud-Native Application (GCP)</h3>
-          <p class="project-description">Spring Boot application with auto-scaling on GCP Managed Instance Groups. Terraform IaC with GitHub Actions CI/CD pipeline.</p>
+          <ul class="project-description">
+            <li>Spring Boot + MySQL; auth & email verification; auto-scales on GCP MIGs</li>
+            <li>Terraform IaC; GitHub Actions + Packer for rolling deployments</li>
+          </ul>
           <div class="project-tech">
             <span class="tech-tag">Spring Boot</span>
             <span class="tech-tag">Terraform</span>
             <span class="tech-tag">GCP</span>
           </div>
-          <a href="https://github.com/sai-vivekanand" target="_blank" rel="noopener" class="project-link" aria-label="GitHub">
+          <a href="https://github.com/sai-vivekanand/webappCloud" target="_blank" rel="noopener" class="project-link" aria-label="GitHub">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
             </svg>
@@ -192,13 +197,16 @@
         </div>
         <div class="project-card">
           <h3 class="project-title">Multi-GPU Distributed Training (HPC)</h3>
-          <p class="project-description">PyTorch DDP implementation for distributed training across multiple GPUs. Optimized preprocessing pipelines with Dask for CPU parallelism.</p>
+          <ul class="project-description">
+            <li>CPU (Joblib/Dask) + multi-GPU pipelines; significant preprocessing speedups</li>
+            <li>Mixed-precision + PyTorch DDP for scalable training</li>
+          </ul>
           <div class="project-tech">
             <span class="tech-tag">PyTorch</span>
             <span class="tech-tag">Dask</span>
             <span class="tech-tag">CUDA</span>
           </div>
-          <a href="https://github.com/sai-vivekanand" target="_blank" rel="noopener" class="project-link" aria-label="GitHub">
+          <a href="https://github.com/sai-vivekanand/Parallel-Processing-Char-Recognition" target="_blank" rel="noopener" class="project-link" aria-label="GitHub">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
             </svg>
