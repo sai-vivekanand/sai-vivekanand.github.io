@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://sai-vivekanand.github.io/sitemap.xml
-
-
