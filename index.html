@@ -6,13 +6,23 @@
   <meta name="color-scheme" content="dark" />
   <title>Sai Vivekanand Reddy — Software Engineer</title>
   <meta name="description" content="Full-Stack, Cloud, and AI Engineer building intelligent, scalable, and user-centric solutions.">
-  <link rel="icon" href="assets/vivek.png" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="assets/styles.css" />
+
   <!-- Open Graph / Twitter -->
   <meta property="og:title" content="Sai Vivekanand Reddy — Software Engineer">
   <meta property="og:description" content="Full-Stack, Cloud, and AI Engineer building intelligent, scalable, and user-centric solutions.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://saivivek.com">
+  <meta property="og:image" content="https://saivivek.com/assets/FullSizeRender.jpg">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://saivivek.com/assets/FullSizeRender.jpg">
 
   <!-- JSON-LD for recruiters/SEO -->
   <script type="application/ld+json">
@@ -22,7 +32,7 @@
     "name": "Sai Vivekanand Reddy",
     "jobTitle": "Software Engineer",
     "email": "mailto:vangala.sa@northeastern.edu",
-    "url": "https://sai-vivekanand.github.io",
+    "url": "https://saivivek.com",
     "sameAs": [
       "https://www.linkedin.com/in/sai-vivekanand-reddy-vangala/",
       "https://github.com/sai-vivekanand"
@@ -31,9 +41,15 @@
   </script>
 </head>
 <body>
+  <!-- background glow layers -->
+  <div class="bg-glow" aria-hidden="true"></div>
+
   <!-- NAVBAR -->
   <nav class="navbar">
-    <div class="navbar-brand">Sai Vivekanand Reddy</div>
+    <a href="#top" class="navbar-brand">Sai Vivekanand Reddy</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
     <div class="navbar-links">
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
@@ -56,63 +72,64 @@
     </div>
   </nav>
 
-  <main class="container">
+  <main class="container" id="top">
     <!-- HERO SECTION -->
-    <section class="hero">
-      <h1 class="hero-title">Full-Stack, Cloud, and AI</h1>
-      <p class="hero-tagline">Building intelligent, scalable, and user-centric solutions.</p>
-      <a href="resume/VSVR_RESUME.pdf" target="_blank" rel="noopener" class="btn-primary">View Resume</a>
+    <section class="hero reveal">
+      <div class="hero-text">
+        <span class="hero-eyebrow">
+          <span class="status-dot"></span> Open to Software Engineering roles
+        </span>
+        <h1 class="hero-title">Full-Stack, Cloud<br>&amp; AI Engineer</h1>
+        <p class="hero-tagline">I build intelligent, scalable, and user-centric systems — from multi-agent AI pipelines to cloud-native infrastructure.</p>
+        <div class="hero-actions">
+          <a href="resume/VSVR_RESUME.pdf" target="_blank" rel="noopener" class="btn-primary">View Resume</a>
+          <a href="#projects" class="btn-secondary">See Projects</a>
+        </div>
+      </div>
+      <div class="hero-photo-wrap">
+        <img src="assets/FullSizeRender.jpg" alt="Sai Vivekanand Reddy" class="hero-photo" loading="eager" />
+      </div>
     </section>
 
     <!-- ABOUT ME -->
-    <section id="about" class="section">
+    <section id="about" class="section reveal">
+      <span class="section-eyebrow">01 — About</span>
       <h2 class="section-title">About Me</h2>
       <p class="about-text">I am a Computer Science graduate student at Northeastern University with 3 years of professional experience as a software engineer. I specialize in bridging the gap between high-performance backend systems, scalable cloud infrastructure, and cutting-edge generative AI.</p>
-    </section>
 
-    <!-- TECH STACK -->
-    <section id="tech-stack" class="section">
-      <h2 class="section-title">Technical Skills</h2>
+      <!-- TECH STACK -->
+      <h3 class="subsection-title">Technical Skills</h3>
       <div class="skills-list">
         <div class="skill-category">
-          <h3 class="skill-category-title">Languages</h3>
-          <ul class="skill-items">
-            <li>Python</li>
-            <li>Java</li>
-            <li>Go</li>
-          </ul>
+          <h4 class="skill-category-title">Languages</h4>
+          <div class="skill-chips">
+            <span>Python</span><span>Java</span><span>Go</span><span>SQL</span>
+          </div>
         </div>
         <div class="skill-category">
-          <h3 class="skill-category-title">AI/ML</h3>
-          <ul class="skill-items">
-            <li>PyTorch</li>
-            <li>LangChain</li>
-          </ul>
+          <h4 class="skill-category-title">AI / ML</h4>
+          <div class="skill-chips">
+            <span>PyTorch</span><span>LangChain</span><span>LangGraph</span><span>RAG</span>
+          </div>
         </div>
         <div class="skill-category">
-          <h3 class="skill-category-title">Cloud & DevOps</h3>
-          <ul class="skill-items">
-            <li>AWS</li>
-            <li>GCP</li>
-            <li>Docker</li>
-            <li>Kubernetes</li>
-            <li>Terraform</li>
-          </ul>
+          <h4 class="skill-category-title">Cloud &amp; DevOps</h4>
+          <div class="skill-chips">
+            <span>AWS</span><span>GCP</span><span>Docker</span><span>Kubernetes</span><span>Terraform</span>
+          </div>
         </div>
         <div class="skill-category">
-          <h3 class="skill-category-title">Frameworks & Tools</h3>
-          <ul class="skill-items">
-            <li>React</li>
-            <li>FastAPI</li>
-            <li>Spring Boot</li>
-            <li>PostgreSQL</li>
-          </ul>
+          <h4 class="skill-category-title">Frameworks &amp; Data</h4>
+          <div class="skill-chips">
+            <span>React</span><span>FastAPI</span><span>Spring Boot</span><span>PostgreSQL</span><span>Airflow</span>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- EXPERIENCE -->
-    <section id="experience" class="section">
+    <section id="experience" class="section reveal">
+      <span class="section-eyebrow">02 — Experience</span>
       <h2 class="section-title">Work Experience</h2>
       <div class="timeline">
         <div class="timeline-item">
@@ -149,7 +166,7 @@
             <div class="timeline-dates">Jul 2020 – May 2022</div>
             <ul class="timeline-bullets">
               <li>Optimized Demand Workbench data loads (~40% faster initial loads)</li>
-              <li>Refactored Save & Calc into staged operations enabling rapid iteration</li>
+              <li>Refactored Save &amp; Calc into staged operations enabling rapid iteration</li>
               <li>Resolved complex full-stack defects with strong test coverage and secure communications</li>
             </ul>
           </div>
@@ -158,10 +175,83 @@
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects" class="section">
+    <section id="projects" class="section reveal">
+      <span class="section-eyebrow">03 — Projects</span>
       <h2 class="section-title">Projects</h2>
       <div class="projects-grid">
-        <div class="project-card">
+
+        <article class="project-card">
+          <div class="project-head">
+            <span class="project-cat">Distributed Systems</span>
+          </div>
+          <h3 class="project-title">Kafka from Scratch</h3>
+          <ul class="project-description">
+            <li>Kafka broker built in Go — TCP server, wire-protocol framing, ApiVersions &amp; Fetch APIs</li>
+            <li>Concurrent connection handling with goroutines and length-prefixed binary parsing</li>
+          </ul>
+          <div class="project-tech">
+            <span class="tech-tag">Go</span>
+            <span class="tech-tag">TCP</span>
+            <span class="tech-tag">Concurrency</span>
+          </div>
+          <a href="https://github.com/sai-vivekanand/kafka_from_scratch" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-head">
+            <span class="project-cat">HPC / ML</span>
+          </div>
+          <h3 class="project-title">Multi-GPU Distributed Training</h3>
+          <ul class="project-description">
+            <li>CPU (Joblib/Dask) + multi-GPU pipelines; significant preprocessing speedups</li>
+            <li>Mixed-precision + PyTorch DDP for scalable training</li>
+          </ul>
+          <div class="project-tech">
+            <span class="tech-tag">PyTorch</span>
+            <span class="tech-tag">Dask</span>
+            <span class="tech-tag">CUDA</span>
+          </div>
+          <a href="https://github.com/sai-vivekanand/Parallel-Processing-Char-Recognition" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-head">
+            <span class="project-cat">Cloud / DevOps</span>
+          </div>
+          <h3 class="project-title">Scalable Cloud-Native App (GCP)</h3>
+          <ul class="project-description">
+            <li>Spring Boot + MySQL; auth &amp; email verification; auto-scales on GCP MIGs</li>
+            <li>Terraform IaC; GitHub Actions + Packer for rolling deployments</li>
+          </ul>
+          <div class="project-tech">
+            <span class="tech-tag">Spring Boot</span>
+            <span class="tech-tag">Terraform</span>
+            <span class="tech-tag">GCP</span>
+          </div>
+          <a href="https://github.com/sai-vivekanand/webappCloud" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-head">
+            <span class="project-cat">AI / Data</span>
+          </div>
+          <h3 class="project-title">Multimodal RAG for CFA Publications</h3>
+          <ul class="project-description">
+            <li>Retrieval over text, tables &amp; images from financial publications</li>
+            <li>Airflow ingestion, Milvus vectors, Snowflake, FastAPI + Streamlit on AWS</li>
+          </ul>
+          <div class="project-tech">
+            <span class="tech-tag">Milvus</span>
+            <span class="tech-tag">Snowflake</span>
+            <span class="tech-tag">Airflow</span>
+          </div>
+          <a href="https://github.com/sai-vivekanand/Multi-modal-Retrieval-Augmented-Generation" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-head">
+            <span class="project-cat">AI / Agents</span>
+          </div>
           <h3 class="project-title">Multi-Agent RAG System</h3>
           <ul class="project-description">
             <li>LangGraph agents orchestrate web and academic retrieval to synthesize insights</li>
@@ -172,51 +262,67 @@
             <span class="tech-tag">Airflow</span>
             <span class="tech-tag">Pinecone</span>
           </div>
-          <a href="https://github.com/sai-vivekanand/Intelligent-Research-Assistant" target="_blank" rel="noopener" class="project-link" aria-label="GitHub">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-            </svg>
-          </a>
-        </div>
-        <div class="project-card">
-          <h3 class="project-title">Scalable Cloud-Native Application (GCP)</h3>
+          <a href="https://github.com/sai-vivekanand/Intelligent-Research-Assistant" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-head">
+            <span class="project-cat">AI / ML</span>
+          </div>
+          <h3 class="project-title">Text2SQL Model Distillation</h3>
           <ul class="project-description">
-            <li>Spring Boot + MySQL; auth & email verification; auto-scales on GCP MIGs</li>
-            <li>Terraform IaC; GitHub Actions + Packer for rolling deployments</li>
+            <li>Distilled a 0.6B Qwen3 model for natural-language → SQL on CSV data</li>
+            <li>2× over base model — 74% LLM-as-judge at 1/1000th the teacher's size</li>
           </ul>
           <div class="project-tech">
-            <span class="tech-tag">Spring Boot</span>
-            <span class="tech-tag">Terraform</span>
-            <span class="tech-tag">GCP</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Qwen3</span>
+            <span class="tech-tag">Ollama</span>
           </div>
-          <a href="https://github.com/sai-vivekanand/webappCloud" target="_blank" rel="noopener" class="project-link" aria-label="GitHub">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-            </svg>
-          </a>
-        </div>
-        <div class="project-card">
-          <h3 class="project-title">Multi-GPU Distributed Training (HPC)</h3>
+          <a href="https://github.com/sai-vivekanand/text2sql-specialist-distil" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-head">
+            <span class="project-cat">AI / Full-Stack</span>
+          </div>
+          <h3 class="project-title">ChatDoc — PDF Analysis</h3>
           <ul class="project-description">
-            <li>CPU (Joblib/Dask) + multi-GPU pipelines; significant preprocessing speedups</li>
-            <li>Mixed-precision + PyTorch DDP for scalable training</li>
+            <li>Upload PDFs, extract text, summarize, and ask questions with Mistral AI</li>
+            <li>FastAPI backend with a Streamlit conversational interface</li>
           </ul>
           <div class="project-tech">
-            <span class="tech-tag">PyTorch</span>
-            <span class="tech-tag">Dask</span>
-            <span class="tech-tag">CUDA</span>
+            <span class="tech-tag">Mistral AI</span>
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">Streamlit</span>
           </div>
-          <a href="https://github.com/sai-vivekanand/Parallel-Processing-Char-Recognition" target="_blank" rel="noopener" class="project-link" aria-label="GitHub">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-            </svg>
-          </a>
-        </div>
+          <a href="https://github.com/sai-vivekanand/ChatDoc" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-head">
+            <span class="project-cat">Backend / Media</span>
+          </div>
+          <h3 class="project-title">YouTube Lite</h3>
+          <ul class="project-description">
+            <li>Video platform supporting upload, processing, and playback</li>
+            <li>Backend services for media ingestion and transcoding workflows</li>
+          </ul>
+          <div class="project-tech">
+            <span class="tech-tag">Backend</span>
+            <span class="tech-tag">Media</span>
+            <span class="tech-tag">Streaming</span>
+          </div>
+          <a href="https://github.com/sai-vivekanand/youtube_lite" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
+        </article>
+
       </div>
     </section>
 
     <!-- CONTACT/FOOTER -->
-    <footer id="contact" class="footer">
+    <footer id="contact" class="footer reveal">
+      <h2 class="footer-title">Let's build something.</h2>
+      <p class="footer-subtitle">I'm open to new opportunities and collaborations.</p>
       <div class="footer-links">
         <a href="https://www.linkedin.com/in/sai-vivekanand-reddy-vangala/" target="_blank" rel="noopener" class="footer-link">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
