@@ -12,7 +12,8 @@
   --bg-elevated: #1b1b27;
   --text-primary: #f1f1f4;
   --text-secondary: #9a9aa6;
-  --text-muted: #6b6b78;
+  /* #6b6b78 measured 3.49:1 on cards — below the WCAG AA 4.5:1 floor for body text */
+  --text-muted: #8b8b98;
   --accent: #22d3ee;
   --accent-2: #818cf8;
   --accent-hover: #38dcf2;
@@ -36,6 +37,34 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+
+/* ========= FOCUS & SKIP LINK ========= */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -120%);
+  z-index: 200;
+  padding: 12px 22px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--accent);
+  border-radius: 0 0 10px 10px;
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translate(-50%, 0);
 }
 
 /* ========= BACKGROUND GLOW ========= */
@@ -210,8 +239,31 @@ body {
 .hero-tagline {
   font-size: 19px;
   color: var(--text-secondary);
-  margin-bottom: 36px;
-  max-width: 520px;
+  margin-bottom: 26px;
+  max-width: 560px;
+}
+
+.hero-tagline strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.hero-domains {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 34px;
+}
+
+.hero-domains span {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  color: var(--accent);
+  background: rgba(34, 211, 238, 0.08);
+  border: 1px solid rgba(34, 211, 238, 0.22);
+  padding: 6px 12px;
+  border-radius: 100px;
 }
 
 .hero-actions {
@@ -316,6 +368,127 @@ body {
   letter-spacing: -0.5px;
 }
 
+.section-lede {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin: -18px 0 28px;
+}
+
+/* ========= FOCUS PILLARS ========= */
+/* minmax(380px) resolves to a balanced 2x2 on desktop rather than 3 + 1 orphan */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr));
+  gap: 18px;
+}
+
+.pillar {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.pillar:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-3px);
+}
+
+.pillar-title {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  letter-spacing: -0.3px;
+}
+
+.pillar-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.pillar-points {
+  list-style: none;
+}
+
+.pillar-points li {
+  font-size: 14.5px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 11px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.pillar-points li::before {
+  content: '▹';
+  color: var(--accent);
+  position: absolute;
+  left: 0;
+}
+
+.pillar-points li:last-child {
+  margin-bottom: 0;
+}
+
+.pillar-points strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ========= EDUCATION ========= */
+.education-list {
+  display: grid;
+  gap: 14px;
+}
+
+.education-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 22px;
+}
+
+.education-school {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.education-degree {
+  font-size: 14.5px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.education-meta {
+  text-align: right;
+}
+
+.education-place {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.education-dates {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin-top: 3px;
+}
+
 /* ========= ABOUT ========= */
 .about-text {
   font-size: 18px;
@@ -324,10 +497,16 @@ body {
   max-width: 820px;
 }
 
+.about-text + .about-text {
+  margin-top: 18px;
+}
+
 /* ========= TECH STACK ========= */
+/* 2x2 on desktop: wider cards mean the chips wrap far less than at 230px,
+   and it avoids a 3 + 1 orphan row for the four categories */
 .skills-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr));
   gap: 18px;
 }
 
@@ -422,11 +601,41 @@ body {
   margin-bottom: 3px;
 }
 
+.timeline-subtitle {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.timeline-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 3px;
+}
+
 .timeline-company {
   font-size: 15px;
   color: var(--accent);
   font-weight: 600;
-  margin-bottom: 3px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a.timeline-company:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.timeline-place {
+  font-size: 13.5px;
+  color: var(--text-muted);
+}
+
+.timeline-place::before {
+  content: '· ';
 }
 
 .timeline-dates {
@@ -460,10 +669,15 @@ body {
   margin-bottom: 0;
 }
 
+.timeline-bullets strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
 /* ========= PROJECTS ========= */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
   gap: 20px;
 }
 
@@ -502,8 +716,50 @@ body {
   transform: scaleX(1);
 }
 
+.project-card--featured {
+  border-color: rgba(34, 211, 238, 0.3);
+}
+
+.project-card--featured::before {
+  transform: scaleX(1);
+}
+
+@media (min-width: 720px) {
+  .project-card--featured { grid-column: span 2; }
+  /* The wide card wraps less, so it is shorter than its row-mate. Without this
+     the flex-grow on .project-description opens a gap mid-card; let the slack
+     collect at the bottom instead. */
+  .project-card--featured .project-description { flex-grow: 0; }
+}
+
 .project-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   margin-bottom: 14px;
+}
+
+.project-year {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.project-flag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #08080c;
+  background: var(--grad);
+  padding: 3px 9px;
+  border-radius: 5px;
+  vertical-align: 3px;
+  margin-left: 6px;
+  white-space: nowrap;
 }
 
 .project-cat {
@@ -552,6 +808,16 @@ body {
   margin-bottom: 0;
 }
 
+.project-description strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.project-description em {
+  color: var(--text-muted);
+  font-style: normal;
+}
+
 .project-tech {
   display: flex;
   flex-wrap: wrap;
@@ -574,13 +840,14 @@ body {
   font-weight: 600;
   color: var(--accent);
   text-decoration: none;
-  transition: gap 0.2s ease, color 0.2s ease;
+  /* transform, not letter-spacing — the latter reflows the text on hover */
+  transition: transform 0.2s ease, color 0.2s ease;
   align-self: flex-start;
 }
 
 .project-link:hover {
   color: var(--accent-hover);
-  letter-spacing: 0.3px;
+  transform: translateX(3px);
 }
 
 /* ========= FOOTER ========= */
@@ -656,6 +923,20 @@ body {
   html { scroll-behavior: auto; }
 }
 
+/* ========= FORCED COLORS =========
+   Gradient text relies on -webkit-text-fill-color: transparent, which renders
+   as nothing in Windows high-contrast mode. Restore solid text there. */
+@media (forced-colors: active) {
+  .hero-title,
+  .footer-title {
+    background: none;
+    -webkit-text-fill-color: currentColor;
+    color: CanvasText;
+  }
+  .bg-glow { display: none; }
+  .reveal { opacity: 1; transform: none; }
+}
+
 /* ========= RESPONSIVE ========= */
 @media (max-width: 880px) {
   .hero {
@@ -666,6 +947,7 @@ body {
   }
   .hero-tagline { margin-left: auto; margin-right: auto; }
   .hero-actions { justify-content: center; }
+  .hero-domains { justify-content: center; }
   .hero-photo-wrap { order: -1; width: 200px; height: 240px; }
 }
 
@@ -712,9 +994,15 @@ body {
   .navbar { padding-left: 16px; padding-right: 16px; }
 }
 
+@media (max-width: 600px) {
+  .education-item { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .education-meta { text-align: left; }
+}
+
 @media (max-width: 480px) {
   .hero-title { font-size: 36px; }
   .hero-tagline { font-size: 17px; }
   .footer-links { flex-direction: column; gap: 18px; }
   .projects-grid { grid-template-columns: 1fr; }
+  .project-head { flex-direction: column; align-items: flex-start; gap: 8px; }
 }
